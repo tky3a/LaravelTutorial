@@ -11,4 +11,17 @@ class ArticlesController extends Controller
       $articles = Article::all();
       return view('articles.index',['articles' => $articles]);
     }
+
+    public function create() {
+      return view('articles.create');
+    }
+
+    public function store(Request $request) {
+      $article = new Article;
+      $article->title = $request->title;
+      $article->body = $request->body;
+      $article->save();
+
+      return view('articles.store');
+    }
 }

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <title>Laravelチュートリアル</title>
@@ -8,7 +8,8 @@
   </head>
   <body class="p-3">
     <h1>ブログ一覧</h1>
-
+    <a href="/create" class="btn btn-primary">新規追加</a>
+    <!-- ループ -->
     @foreach ($articles as $article)
     <div class="card mb-2">
       <div class="card-body">

@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'ArticlesController@index');
+Route::get('create', 'ArticlesController@create');
+Route::post('create', 'ArticlesController@store');
