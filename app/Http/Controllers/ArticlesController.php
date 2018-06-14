@@ -24,4 +24,18 @@ class ArticlesController extends Controller
 
       return view('articles.store');
     }
+
+    public function edit(Request $request, $id) {
+      $article = Article::find($id);
+      return view('article.edit', ['article' => $article]);
+    }
+
+    public function update(Request $request) {
+      $article = Article::find($request->id);
+      $article->title = $request->title;
+      $article->body = $request->body;
+      $article->save();
+
+      return view('article.update');
+    }
 }
