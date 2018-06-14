@@ -27,7 +27,7 @@ class ArticlesController extends Controller
 
     public function edit(Request $request, $id) {
       $article = Article::find($id);
-      return view('article.edit', ['article' => $article]);
+      return view('articles.edit', ['article' => $article]);
     }
 
     public function update(Request $request) {
@@ -36,6 +36,6 @@ class ArticlesController extends Controller
       $article->body = $request->body;
       $article->save();
 
-      return view('article.update');
+      return view('articles.update');
     }
 }
