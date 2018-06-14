@@ -38,4 +38,14 @@ class ArticlesController extends Controller
 
       return view('articles.update');
     }
+
+    public function show(Request $request, $id) {
+      $article = Article::find($id);
+      return view('articles.show', ['article' => $article]);
+    }
+
+    public function delete(Request $request) {
+      Article::destroy($request->id);
+      return view('articles.delete');
+    }
 }
